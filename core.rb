@@ -41,9 +41,9 @@ module ExtensionTools2
 
     # Reload button
     cmd_reload = UI::Command.new("Reload ET2") do
-      puts "[ET2][Core] Reloading core + functions..."
-      load File.join(ROOT_PATH, "core.rb")
+      ExtensionTools2::Reload.perform if defined?(ExtensionTools2::Reload)
     end
+
     cmd_reload.tooltip = "Reload ExtensionTools2"
     cmd_reload.status_bar_text = "Reload ExtensionTools2 Core and Functions"
     cmd_reload.small_icon = icon_path("reload.png")
